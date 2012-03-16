@@ -15,7 +15,8 @@ h1,h2,h3,h4,h5 {
 }
 
 button {
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: "din-condensed-web", Helvetica, Arial, sans-serif;
+  // font-size: 110%;
 }
 
 h1 {
@@ -25,4 +26,8 @@ h1 {
 div.dark-bg {
   background-image: url('../images/dark-bg.png');
   padding: 50px;
+}
+
+div.wrapper {
+  height: 52px;
 }
