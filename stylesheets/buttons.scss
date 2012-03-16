@@ -13,18 +13,47 @@ $inverseBtnColor: #3f3f3f;
   background-image: -o-linear-gradient(top, lighten($color, 5%), darken($color, 5%));
   background-image: -ms-linear-gradient(top, lighten($color, 5%), darken($color, 5%));
   background-image: linear-gradient(top, lighten($color, 5%), darken($color, 5%));
-  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#d6d8d8', EndColorStr='#9e9f9f');
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='lighten($color, 5%)', EndColorStr='darken($color, 5%)');
+  background-repeat: repeat-x;
   color: #ffffff;
   text-shadow: 0px -1px 0px rgba(0, 0, 0, .2);
   &:hover {
-    background-color: lighten($color, 5%);
+    background-color: lighten($color, 20%);
+    background-image: -webkit-linear-gradient(top, lighten($color, 10%), $color);
+    background-image: -moz-linear-gradient(top, lighten($color, 10%), $color);
+    background-image: -o-linear-gradient(top, lighten($color, 10%), $color);
+    background-image: -ms-linear-gradient(top, lighten($color, 10%), $color);
+    background-image: linear-gradient(top, lighten($color, 10%), $color);
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='lighten($color, 10%)', EndColorStr='$color');
+    background-repeat: repeat-x;
+  }
+  &[disabled="disabled"], &.disabled {
+    top: 3px;
+    box-shadow: inset 0px 0px 0px 0px rgba(00, 00, 00, 0),
+                inset 0px -1px 0px 0px rgba(255, 255, 255, .2),
+                inset 0px 1px 0px 0px rgba(255, 255, 255, .2),
+                0px 0px 2px 1px rgba(0, 0, 0, .1);
+    padding-bottom: 7px;
+    background-color: mix($color, #929292, 50%);
+    background-image: -webkit-gradient(linear, left top, left bottom, from(lighten(mix($color, #929292, 50%), 3%)), to(darken(mix($color, #929292, 50%), 3%)));
+    background-image: -webkit-linear-gradient(top, lighten(mix($color, #929292, 50%), 3%), darken(mix($color, #929292, 50%), 3%));
+    background-image: -moz-linear-gradient(top, lighten(mix($color, #929292, 50%), 3%), darken(mix($color, #929292, 50%), 3%));
+    background-image: -o-linear-gradient(top, lighten(mix($color, #929292, 50%), 3%), darken(mix($color, #929292, 50%), 3%));
+    background-image: -ms-linear-gradient(top, lighten(mix($color, #929292, 50%), 3%), darken(mix($color, #929292, 50%), 3%));
+    background-image: linear-gradient(top, lighten(mix($color, #929292, 50%), 3%), darken(mix($color, #929292, 50%), 3%));
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='lighten(mix($color, #929292, 50%), 3%)', EndColorStr='darken(mix($color, #929292, 50%), 3%)');
+    color: #bbb;
+    cursor: default;
   }
 }
 
 button, .btn {
-  padding: 10px 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
   position: relative;
-  font-size: .75em;
+  font-size: 16px;
   color: #555;
   background-color: $btnColor;
   background-image: -webkit-gradient(linear, left top, left bottom, from(lighten($btnColor, 5%)), to(darken($btnColor, 5%)));
@@ -33,7 +62,7 @@ button, .btn {
   background-image: -o-linear-gradient(top, lighten($btnColor, 5%), darken($btnColor, 5%));
   background-image: -ms-linear-gradient(top, lighten($btnColor, 5%), darken($btnColor, 5%));
   background-image: linear-gradient(top, lighten($btnColor, 5%), darken($btnColor, 5%));
-  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#d6d8d8', EndColorStr='#9e9f9f');
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='lighten($btnColor, 5%)', EndColorStr='darken($btnColor, 5%)');
   border: 1px solid rgba(0,0,0, .4);
   border-radius: 5px;
   box-shadow: inset 0px -3px 0px 0px rgba(00, 00, 00, .4),
@@ -62,31 +91,68 @@ button, .btn {
   }
   // States
   &:hover {
-    background-color: lighten($btnColor, 5%);
+    background-color: lighten($btnColor, 10%);
+    // background-repeat: repeat-y;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(lighten($btnColor, 10%)), to($btnColor));
+    background-image: -webkit-linear-gradient(top, lighten($btnColor, 10%), $btnColor);
+    background-image: -moz-linear-gradient(top, lighten($btnColor, 10%), $btnColor);
+    background-image: -o-linear-gradient(top, lighten($btnColor, 10%), $btnColor);
+    background-image: -ms-linear-gradient(top, lighten($btnColor, 10%), $btnColor);
+    background-image: linear-gradient(top, lighten($btnColor, 10%), $btnColor);
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='lighten($btnColor, 10%)', EndColorStr='$btnColor');
+    // background-position: 0 15px;
     cursor: pointer;
   }
   &:active {
-    top: 2px;
+    top: 3px;
     box-shadow: inset 0px 0px 0px 0px rgba(00, 00, 00, 0),
                 inset 0px -1px 0px 0px rgba(255, 255, 255, .2),
                 inset 0px 1px 0px 0px rgba(255, 255, 255, .2),
                 0px 0px 2px 1px rgba(0, 0, 0, .1);
+    padding-bottom: 7px;
   }
   &[disabled="disabled"], &.disabled {
-
+    top: 3px;
+    box-shadow: inset 0px 0px 0px 0px rgba(00, 00, 00, 0),
+                inset 0px -1px 0px 0px rgba(255, 255, 255, .2),
+                inset 0px 1px 0px 0px rgba(255, 255, 255, .2),
+                0px 0px 2px 1px rgba(0, 0, 0, .1);
+    padding-bottom: 7px;
+    background-color: mix($btnColor, #929292, 50%);
+    background-image: -webkit-gradient(linear, left top, left bottom, from(lighten(mix($btnColor, #929292, 50%), 3%)), to(darken(mix($btnColor, #929292, 50%), 3%)));
+    background-image: -webkit-linear-gradient(top, lighten(mix($btnColor, #929292, 50%), 3%), darken(mix($btnColor, #929292, 50%), 3%));
+    background-image: -moz-linear-gradient(top, lighten(mix($btnColor, #929292, 50%), 3%), darken(mix($btnColor, #929292, 50%), 3%));
+    background-image: -o-linear-gradient(top, lighten(mix($btnColor, #929292, 50%), 3%), darken(mix($btnColor, #929292, 50%), 3%));
+    background-image: -ms-linear-gradient(top, lighten(mix($btnColor, #929292, 50%), 3%), darken(mix($btnColor, #929292, 50%), 3%));
+    background-image: linear-gradient(top, lighten(mix($btnColor, #929292, 50%), 3%), darken(mix($btnColor, #929292, 50%), 3%));
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='lighten(mix($btnColor, #929292, 50%), 3%)', EndColorStr='darken(mix($btnColor, #929292, 50%), 3%)');
+    color: #888;
+    cursor: default;
   }
   // Sizes
   &.large {
     padding: 12px 26px;
-    font-size: .85em;
+    font-size: 20px;
+    box-shadow: inset 0px -5px 0px 0px rgba(00, 00, 00, .4),
+                inset 0px -6px 0px 0px rgba(255, 255, 255, .2),
+                inset 0px 1px 0px 0px rgba(255, 255, 255, .2),
+                0px 3px 2px 1px rgba(0, 0, 0, .1);
+    &:active {
+      top: 6px;
+      box-shadow: inset 0px 0px 0px 0px rgba(00, 00, 00, .4),
+                  inset 0px -1px 0px 0px rgba(255, 255, 255, .2),
+                  inset 0px 1px 0px 0px rgba(255, 255, 255, .2),
+                  0px 0px 2px 1px rgba(0, 0, 0, .1);
+      padding-bottom: 8px;
+    }
   }
   &.small {
     padding: 10px 14px;
-    font-size: .65em;
+    font-size: 12px;
   }
   &.mini {
     padding: 5px 5px;
-    font-size: .5em;
+    font-size: 10px;
     box-shadow: inset 0px -2px 0px 0px rgba(00, 00, 00, .4),
               inset 0px -3px 0px 0px rgba(255, 255, 255, .2),
               inset 0px 1px 0px 0px rgba(255, 255, 255, .2),
@@ -103,19 +169,24 @@ button, .btn {
   &.rounded {
     border-radius: 500px;
   }
-  &.top-rounded {
-    border-radius: 10px 10px 3px 3px;
-  }
-  &.bottom-rounded {
-    border-radius: 3px 3px 10px 10px;
-  }
-  &.square {
-    border-radius: 0px;
-  }
   &.dark-bg {
     border: 1px solid rgba(0,0,0, .7);
   }
   // Transitions
-  -webkit-transition: top 35ms ease-out;
-  -webkit-transition: box-shadow 35ms ease-out;
+  -webkit-transition-property: top, box-shadow, padding-bottom, margin-bottom, background-image;
+  -webkit-transition-duration: 40ms, 40ms, 40ms, 40ms, 100ms;
+  -webkit-transition-timing-function: linear, linear, linear, linear;
+  // -moz-transition: top 75ms linear;
+  // -o-transition: top 75ms linear;
+  // transition: top 75ms linear;
+  // -webkit-transition: box-shadow 75ms linear;
+  // -moz-transition: box-shadow 75ms linear;
+  // -o-transition: box-shadow 75ms linear;
+  // transition: box-shadow 75ms linear;
+  // -webkit-transition: padding 100ms linear;
+  // -moz-transition: padding 100ms linear;
+  // -o-transition: padding 100ms linear;
+  // transition: padding 100ms linear;
+  // -webkit-transition: box-shadow 500ms ease-out;
+  // -webkit-transition: background .5s ease-out;
 }
