@@ -1,0 +1,28 @@
+@import 'buttons';
+@import 'icons';
+
+$bgColor: #dcdcdc;
+
+body {
+  background-color: $bgColor;
+  background-image: url('../images/bg.png');
+}
+
+h1,h2,h3,h4,h5 {
+  color: darken($bgColor, 20%);
+  text-shadow: 1px 1px 0px lighten($bgColor, 10%);
+  font-family: "din-condensed-web", Helvetica, Arial, sans-serif;
+}
+
+button {
+  font-family: "din-condensed-web", Helvetica, Arial, sans-serif;
+}
+
+h1 {
+  font-size: 3em;
+}
+
+div.dark-bg {
+  background-image: url('../images/dark-bg.png');
+  padding: 50px;
+}

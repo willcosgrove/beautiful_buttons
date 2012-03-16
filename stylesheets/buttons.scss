@@ -1,0 +1,121 @@
+$btnColor: #deddda;
+$primaryBtnColor: #3c64ca;
+$warningBtnColor: #e5a200;
+$dangerBtnColor: #c34d4d;
+$successBtnColor: #62af3f;
+$infoBtnColor: #4a8dc7;
+$inverseBtnColor: #3f3f3f;
+
+@mixin buttonAction($color){
+  background-color: $color;
+  background-image: -webkit-linear-gradient(top, lighten($color, 5%), darken($color, 5%));
+  background-image: -moz-linear-gradient(top, lighten($color, 5%), darken($color, 5%));
+  background-image: -o-linear-gradient(top, lighten($color, 5%), darken($color, 5%));
+  background-image: -ms-linear-gradient(top, lighten($color, 5%), darken($color, 5%));
+  background-image: linear-gradient(top, lighten($color, 5%), darken($color, 5%));
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#d6d8d8', EndColorStr='#9e9f9f');
+  color: #ffffff;
+  text-shadow: 0px -1px 0px rgba(0, 0, 0, .2);
+  &:hover {
+    background-color: lighten($color, 5%);
+  }
+}
+
+button, .btn {
+  padding: 10px 20px;
+  position: relative;
+  font-size: .75em;
+  color: #555;
+  background-color: $btnColor;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(lighten($btnColor, 5%)), to(darken($btnColor, 5%)));
+  background-image: -webkit-linear-gradient(top, lighten($btnColor, 5%), darken($btnColor, 5%));
+  background-image: -moz-linear-gradient(top, lighten($btnColor, 5%), darken($btnColor, 5%));
+  background-image: -o-linear-gradient(top, lighten($btnColor, 5%), darken($btnColor, 5%));
+  background-image: -ms-linear-gradient(top, lighten($btnColor, 5%), darken($btnColor, 5%));
+  background-image: linear-gradient(top, lighten($btnColor, 5%), darken($btnColor, 5%));
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#d6d8d8', EndColorStr='#9e9f9f');
+  border: 1px solid rgba(0,0,0, .4);
+  border-radius: 5px;
+  box-shadow: inset 0px -3px 0px 0px rgba(00, 00, 00, .4),
+              inset 0px -4px 0px 0px rgba(255, 255, 255, .2),
+              inset 0px 1px 0px 0px rgba(255, 255, 255, .2),
+              0px 3px 2px 1px rgba(0, 0, 0, .1);
+  text-shadow: 0px 1px 0px rgba(255, 255, 255, .4);
+  // Action Types
+  &.primary {
+    @include buttonAction($primaryBtnColor)
+  }
+  &.warning {
+    @include buttonAction($warningBtnColor)
+  }
+  &.danger {
+    @include buttonAction($dangerBtnColor)
+  }
+  &.success {
+    @include buttonAction($successBtnColor)
+  }
+  &.info {
+    @include buttonAction($infoBtnColor)
+  }
+  &.inverse {
+    @include buttonAction($inverseBtnColor)
+  }
+  // States
+  &:hover {
+    background-color: lighten($btnColor, 5%);
+    cursor: pointer;
+  }
+  &:active {
+    top: 2px;
+    box-shadow: inset 0px 0px 0px 0px rgba(00, 00, 00, 0),
+                inset 0px -1px 0px 0px rgba(255, 255, 255, .2),
+                inset 0px 1px 0px 0px rgba(255, 255, 255, .2),
+                0px 0px 2px 1px rgba(0, 0, 0, .1);
+  }
+  &[disabled="disabled"], &.disabled {
+
+  }
+  // Sizes
+  &.large {
+    padding: 12px 26px;
+    font-size: .85em;
+  }
+  &.small {
+    padding: 10px 14px;
+    font-size: .65em;
+  }
+  &.mini {
+    padding: 5px 5px;
+    font-size: .5em;
+    box-shadow: inset 0px -2px 0px 0px rgba(00, 00, 00, .4),
+              inset 0px -3px 0px 0px rgba(255, 255, 255, .2),
+              inset 0px 1px 0px 0px rgba(255, 255, 255, .2),
+              0px 3px 2px 1px rgba(0, 0, 0, .1);
+    &:active {
+      top: 2px;
+      box-shadow: inset 0px 0px 0px 0px rgba(00, 00, 00, 0),
+                  inset 0px -1px 0px 0px rgba(255, 255, 255, .2),
+                  inset 0px 1px 0px 0px rgba(255, 255, 255, .2),
+                  0px 0px 2px 1px rgba(0, 0, 0, .1);
+    }
+  }
+  // Versions
+  &.rounded {
+    border-radius: 500px;
+  }
+  &.top-rounded {
+    border-radius: 10px 10px 3px 3px;
+  }
+  &.bottom-rounded {
+    border-radius: 3px 3px 10px 10px;
+  }
+  &.square {
+    border-radius: 0px;
+  }
+  &.dark-bg {
+    border: 1px solid rgba(0,0,0, .7);
+  }
+  // Transitions
+  -webkit-transition: top 35ms ease-out;
+  -webkit-transition: box-shadow 35ms ease-out;
+}
