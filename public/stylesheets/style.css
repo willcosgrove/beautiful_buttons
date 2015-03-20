@@ -18,9 +18,10 @@ button, .btn {
   border-radius: 5px;
   box-shadow: inset 0px -3px 0px 0px rgba(0, 0, 0, 0.4), inset 0px -4px 0px 0px rgba(255, 255, 255, 0.2), inset 0px 1px 0px 0px rgba(255, 255, 255, 0.2), 0px 3px 2px 1px rgba(0, 0, 0, 0.1);
   text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.4);
-  -webkit-transition-property: top, box-shadow, padding-bottom, margin-bottom, background-image;
-  -webkit-transition-duration: 40ms, 40ms, 40ms, 40ms, 100ms;
-  -webkit-transition-timing-function: linear, linear, linear, linear;
+  outline: none;
+  transition-property: top, box-shadow, padding-bottom, margin-bottom, background-image;
+  transition-duration: 40ms, 40ms, 40ms, 40ms, 100ms;
+  transition-timing-function: linear, linear, linear, linear;
 }
 button.primary, .btn.primary {
   background-color: #3c64ca;
